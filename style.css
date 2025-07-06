@@ -1,0 +1,1712 @@
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#loader.fade-out {
+    opacity: 0;
+}
+
+.typewriter {
+    color: #e80829;
+    font-family: monospace;
+    font-size: 6rem;
+    overflow: hidden;
+    border-right: .15em solid #e80829;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .15em;
+    animation: typing 3s steps(6, end), blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 6ch }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #e80829 }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: League system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'League Spartan', sans-serif;
+}
+
+html {
+    font-size: 62.5%;/*Esto quiere decir que mis pixeles por defecto serán de 10px y 1 rem siempre valdrá eso mismo*/
+    /*background-image: url('https://cdn2.lnk.bi/bg/-1771979_240109073756_d_392.png');*/
+    scroll-behavior: smooth;
+}
+
+html, body{
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+}
+
+/*Logo*/
+.imagenLogo{
+    /*margin: 5rem;*/
+    flex-shrink: 0;
+}
+
+.imagenLogo img{
+    /*margin: 5rem;*/
+    width: 15rem;
+    height: auto;
+    /*display: block;*/
+}
+
+header { /*fija el menú*/
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: white; /* importante para evitar transparencias */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* opcional para dar profundidad */
+}
+
+.sectionHeader{
+    position: relative;
+    /*display: grid;*/
+    /*grid-template-columns: 33.3% 33.3% 33.3%;*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+
+}
+
+/*Menú*/
+.hamburger-container {
+    display: none; /* Se mostrará en mobile */
+    z-index: 1000;
+}
+
+.menu-toggle{
+    width: 30px;
+    height: 24px;
+    position: relative;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-toggle .line {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #e80829;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+.menuHeader{
+    flex-grow: 1;
+    margin: 0 1rem;
+}
+.menuHeader ul{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menuHeader li {
+    white-space: nowrap;
+}
+
+.menuHeader a{
+    color: #000000;
+    padding: 1rem;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.menuHeader a:hover{
+    background-color: #e80829;
+    color: white    ;
+    padding: 1rem;
+    text-decoration: none;
+    border-radius: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.menuInicio{
+    color: #e80829;
+    font-weight: bold;
+}
+
+.menuContactoMobil {
+    display: none;
+}
+/*Botón*/
+.buttonHeader button{
+    /*margin: 5rem;*/
+    flex-shrink: 0;
+    background-color: #e80829;
+    border-radius: 12px;
+    height: 5rem;
+    width: 15rem;
+    text-align: center;
+    font-weight: bold;
+    border: none;
+    color: white;
+    margin-right: -10rem;
+    
+}
+.buttonHeader button a{
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.7rem;
+    color: white;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.buttonHeader button a:hover{
+    text-decoration: none;
+    font-size: 1.7rem;
+    color: white;
+    border: none;
+}
+
+.buttonHeader button:hover{
+    /*margin: 5rem;*/
+    background-color: #000000;
+    color: white;
+    border: none;
+}
+
+main {
+  margin-top: 10rem; /* ajusta según la altura real del header*/
+}
+
+
+/*Slide Header*/
+.slideHeaderimagenLogo{
+    /*margin: 5rem;*/
+    margin-bottom: 1rem;
+    /*margin-left: 40rem;*/
+}
+.solucionesPago{
+    position: relative;
+    text-align: center;
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+    color:#000000;
+    text-decoration: none;
+}
+
+.solucionesPago h1{
+    font-size: 6rem;
+    margin-bottom: 2rem;
+    color:#000000;
+}
+
+.solucionesPago h2{
+    font-size: 6rem;
+    margin-bottom: 2rem;
+    color:#000000;
+}
+.solucionesPago p{
+    font-size: 1.5rem;
+    margin-bottom: 5rem;
+}
+.solucionesPago button{
+    margin-bottom: 27rem;
+    
+}
+
+/*--Main--*/
+
+/* Sección Partners */
+.sectionPartnersGeneral {
+    width: 100%;
+    max-width: 1200px; /* Añadimos un ancho máximo */
+    margin: 0 auto; /* Esto centrará toda la sección */
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+}
+
+.sectionPartners {
+    width: 100vw; /* Abarca todo el ancho de la ventana */
+    height: 6rem;
+    background-color: black;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.sectionPartners h3 {
+    font-size: 4rem;
+    color: white;
+
+}
+
+.partnersList {
+    width: 100%;
+    display: flex;
+}
+
+.partnersList ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30%; /* Espacio entre logos */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.partnersList li img {
+    height: 80px; /* Altura fija */
+    width: auto; /* Ancho automático para mantener proporción */
+}
+
+/* Video */
+.video-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    text-align: center;
+}
+
+
+.video-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: #000;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 56.25%; /* Mantiene la proporción 16:9 */
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateY(-50%);
+    border: none;
+    pointer-events: none; /* Previene interacción con el video */
+}
+
+.video-title {
+    font-size: 8rem;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 2rem;
+    letter-spacing: 5px;
+}
+
+.video-title span{
+    color: #e80829;
+}
+
+.video-subtitle {
+    font-size: 2.4rem;
+    color: #000;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+/* Overlay opcional para oscurecer ligeramente el video */
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7); /* Overlay blanco semitransparente */
+    z-index: 1;
+}
+
+/* -- Main -- */
+
+.partnersList {
+    justify-items: center;
+}
+
+ /* Quien es Red Pagos Pro 1ra Sección */
+.quienEsRedPagosPro{
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 10rem;
+}
+
+.quienEsRedPagosPro h2{
+    font-size: 6rem;
+    color: #e80829;
+    margin-bottom: 10rem;
+}
+
+.quienEsRedPagosPro p{
+    color: grey;
+    font-size: 2rem;
+}
+
+.quienEsRedPagosPro1{
+    margin-left: 6%;
+    margin-right: 6%;
+    margin-top: 10rem;
+    margin-bottom: 5rem;
+}
+
+.quienEsRedPagosPro img{
+    align-self: flex-start;
+    width: 50rem;
+    border-radius:20px;
+    margin-top: 5rem;
+    margin-right: 2rem;
+}
+
+/* Soluciones de Pago 2da Sección */
+
+.solucionesPago{
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 10rem;
+}
+
+.solucionesPago img{
+    width: 50rem;
+    border-radius:20px;
+    margin-top: 5rem;
+    margin-left: 2rem;
+}
+
+.solucionesPago h2{
+    font-size: 6rem;
+    color: #e80829;
+    margin-bottom: 5rem;
+}
+
+.solucionesPago p{
+    color: grey;
+    font-size: 2rem;
+    justify-items: center;
+    justify-content: center;
+    margin-left: 6%;
+    margin-right: 6%;
+    margin-bottom: 4rem;
+}
+
+.solucionesPago1{
+    margin-left: 6%;
+    margin-right: 6%;
+    margin-top: 5rem;
+}
+
+.sliderMain{
+    text-align: center;
+    width: 75rem;
+    height: auto;
+    margin: 5rem auto 0;
+    margin-top: 5rem;
+    margin-bottom: 10rem;
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    position: relative;
+    /*overflow: hidden;
+    /*animation: slider 30s infinite alternate ease-in-out;*/
+}
+
+.sliderContainer{
+    display: flex;
+    width: 300%;
+}
+    
+.sliderContainer ul{
+    display: flex;
+    width: 500%;
+    height: auto;
+    list-style: none;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 2%;
+}
+
+.sliderContainer li{
+    width: 10%;
+    flex-shrink: 0;
+}
+
+.sliderContainer iframe{
+    border-radius: 11px;
+    list-style: none;
+    border: none;
+    outline: none;
+    width: 150px;
+    height: auto;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    object-fit: cover;  
+}
+
+.sliderMain h3{
+    font-size: 2.5rem;
+    color: #e80829;
+}
+
+.sliderMain p{
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/*@keyframes slider{
+    0% {margin-left: 0%;}/*Esto quiere decir que la primera imagen irá de 0 a 20% en 10s
+            ya que como tenemos 5 imágenes, habría que dividir 50s/5 = 10s por cada imágen y cada 
+            imagen tarda 10 en cambiar
+    33% {margin-left: 0%;}
+    40% {margin-left: -100%;}
+    66% {margin-left: -100%;}
+    73% {margin-left: -200%;}
+    100% {margin-left: -200%;}
+}*/
+
+/* Experiencia 3ra Sección */
+.sectionExperience{
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 15rem;
+}
+
+.sectionExperience h2{
+    color: #e80829;
+    font-size: 6rem;
+    margin-bottom: 10rem;
+    text-align: center;
+}
+
+.sectionExperience ul{
+    list-style:decimal;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    color: grey;
+    font-size: 2rem;
+    margin-left: 0rem;
+    justify-items: left;
+    
+}
+
+.sectionExperience ul li {
+  background-color: #f8f8f8;
+  border-left: 5px solid #e80829;
+  padding: 2rem 3rem;
+  font-size: 2rem;
+  color: #333;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+  position: relative;
+  padding-left: 4rem;
+}
+
+.sectionExperience ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 1.2rem;
+  top: 1.5rem;
+  font-size: 2rem;
+  color: #e80829;
+}
+
+.sectionExperience ul li:hover {
+  transform: scale(1.02);
+  background-color: #fff0f3;
+}
+
+.sectionExperience img{
+    align-self: flex-start;
+    width: 50rem;
+    border-radius:20px;
+    margin-top: 5rem;
+    margin-right: 2rem;
+}
+
+.sectionExperience1{
+    margin-left: 6%;
+    margin-right: 6%;
+    margin-top: 5rem;
+    
+}
+
+
+
+ /* Sección tecnología 4ra Sección */
+
+.sectionTech{
+    text-align: center;
+    justify-content: center;
+    margin-left: 6%;
+    margin-right: 6%;
+    margin-bottom: 15rem;
+}
+
+.sectionTech h2{
+    font-size: 6rem;
+    margin-bottom: 10rem;
+    color: #e80829;
+}
+
+.sectionTech ul{
+    display: flex;
+    gap: 2rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+.sectionTech li{
+    width: 20%;
+}
+
+.sectionTech h3{
+    color: #e80829;
+    font-size: 2.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.sectionTech p{
+    color: grey;
+    font-size: 2rem;
+    justify-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.sectionTech1{
+    text-align: center;
+    width: 125rem;
+    height: auto;
+    margin: 5rem auto 0;
+    margin-bottom: 10rem;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    /*overflow: hidden;
+    animation: slider 20s infinite alternate ease-in-out;*/
+}
+
+.containerSectionTech{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    text-align: center;
+}
+
+.containerSectionTech ul{
+    display: flex;
+    width: 100%;
+    height: auto;
+    list-style: none;
+    gap: 8rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.containerSectionTech iframe{
+    border: none;
+    outline: none;
+    width: 25rem;
+    height: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+ 
+
+ /* Sección pagos 5ta Sección */
+.metodosPago{
+    text-align: center;
+    justify-content: center;
+    /*margin-left: 6%;
+    margin-right: 6%;*/
+    margin-bottom: 15rem;
+}
+.metodosPago h2{
+    color: #e80829;
+    font-size: 6rem;
+    margin-bottom: 10rem;
+}
+
+.metodosPagoUl{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4rem;
+    padding: 0;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+.metodosPagoUl ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4rem;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 80rem;
+}
+
+.metodosPagosUl-li {
+  list-style: none;
+  background-color: #fff;
+  border: 2px solid #e80829;
+  border-radius: 12px;
+  width: calc(50% - 2rem); /* Dos columnas con espacio */
+  padding: 2rem;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.metodosPagosUl-li:hover {
+  transform: translateY(-5px);
+  background-color: #fff5f6;
+}
+
+.metodosPagosUl-li h3 {
+  color: #e80829;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.metodosPagosUl-li ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.metodosPagosUl-li ul li {
+  font-size: 1.7rem;
+  padding: 0.5rem 0;
+  color: #444;
+  border-bottom: 1px solid #eee;
+}
+
+.metodosPagosUl-li ul li:last-child {
+  border-bottom: none;
+}
+
+
+
+ /* Sección 6 de Soluciones de Depósito */
+ .solucionesDeDeposito{
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 15rem;
+}
+
+.solucionesDeDeposito1{
+    margin-top: 5rem;
+
+}
+
+.solucionesDeDeposito h2{
+    font-size: 6rem;
+    color: #e80829;
+    margin-bottom: 10rem;
+}
+
+
+.solucionesDeDeposito img{
+    align-self: flex-start;
+    width: 50rem;
+    border-radius:20px;
+    margin-top: 5rem;
+    margin-left: 2rem;
+}
+
+
+.solucionesDepositoGrid ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4rem;
+  padding: 0;
+  margin: 5rem auto;
+  max-width: 80rem;
+  list-style: none;
+}
+
+.solucionesDepositoGrid li {
+  background-color: #fff;
+  border: 2px solid #e80829;
+  border-radius: 12px;
+  width: calc(50% - 2rem);
+  padding: 2rem;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.solucionesDepositoGrid li:hover {
+  transform: translateY(-5px);
+  background-color: #fff5f6;
+}
+
+.solucionesDepositoGrid h3 {
+  color: black;
+  font-size: 2.5rem;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.solucionesDepositoGrid p {
+  font-size: 1.6rem;
+  color: #444;
+  text-align: left;
+}
+
+.solucionesDepositoLista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  justify-content: center;
+  padding: 0;
+  margin: 5rem auto;
+  list-style: none;
+  max-width: 80rem;
+}
+
+.solucionesDepositoLista li {
+  display: flex;
+  align-items: center;
+  width: calc(50% - 2rem);
+  background: #fff;
+  border: 2px solid #e80829;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.solucionesDepositoLista li:hover {
+  transform: translateY(-5px);
+  background-color: #fff5f6;
+}
+
+.solucionesDepositoLista .icono {
+  width: 80px;
+  height: 80px;
+  background-color: #f4f0f0;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 2rem;
+  flex-shrink: 0;
+}
+
+.solucionesDepositoLista .icono i {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.solucionesDepositoLista .contenido h3 {
+  font-size: 2.2rem;
+  color: #e80829;
+  margin-bottom: 0.5rem;
+}
+
+.solucionesDepositoLista .contenido p {
+  font-size: 1.6rem;
+  color: #444;
+}
+
+/*Sección 7 - Pago de Control Inteligente*/
+.panelControl{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-left: 6%;
+    margin-right: 6%;
+    margin-top: 2rem;
+    margin-bottom: 10rem;
+}
+.panelControl h2{
+    font-size: 6rem;
+    color: #e80829;
+    margin-bottom: 10rem;
+}
+
+.panelControl p{
+    font-size: 2rem;
+    color: grey;
+    margin-bottom: 5rem;
+}
+
+.panelControlLista {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+  padding: 0;
+  margin: 0;
+}
+
+.panelControlLista li {
+  background-color: #fff;
+  border: 2px solid #e80829;
+  border-radius: 12px;
+  padding: 2.5rem;
+  width: calc(50% - 2rem);
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  text-align: left;
+}
+
+.panelControlLista li:hover {
+  transform: translateY(-5px);
+  background-color: #fff5f6;
+}
+
+.panelControlLista h3 {
+  font-size: 2.2rem;
+  color: #e80829;
+  margin-bottom: 1rem;
+}
+
+.panelControlLista p {
+  font-size: 1.6rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+
+/*--FOOTER--*/
+
+footer{
+    /*margin-top: -25rem;*/
+    background-color: #000000;
+    width: 100%;
+    max-width: 100vw; /* Asegura que no exceda el ancho de la ventana */
+    overflow-x: hidden; /* Previene scroll horizontal */
+    justify-content: space-between;
+}
+.firstSectionFooter{
+    display: flex;
+    justify-content: space-between;
+    width: 80%; /* O un ancho específico como 1200px */
+    margin: 0 auto; /* Centra la sección */
+    padding: 0 20px; /* Añade espacio a los lados */
+}
+
+.firstSectionFooter h4{
+    font-size: 2rem; 
+    margin-top: 15rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+    
+}
+
+.firstSectionFooter p{
+    color: #ffffff;
+    font-size: 1.5rem;
+    
+}
+.firstSectionFooter ul{
+    list-style: none;
+    color: #ffffff;
+    font-size: 1.5rem;
+    
+}
+
+.iconosFooter li{
+    margin: 3rem 1rem;
+    display: inline-block;
+}
+/*Segunda sección footer*/
+.secondSectionFooter{
+    text-align: center;
+    padding: 1rem 0rem 2rem;
+    margin-top: 10rem;
+    color: #ffffff;
+    font-size: 1.5rem;
+    width: 100%; /* Asegura que use todo el ancho */
+}
+
+.menuFooter a{
+    color: inherit;         /* Hereda el color del elemento padre */
+    text-decoration: none;  /* Elimina la línea debajo del texto */
+}
+
+.menuFooter a:hover{
+    color: #e80829;         /* Hereda el color del elemento padre */
+}
+
+.alianzasFooter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.alianzasFooter a{
+    color: #ffffff; /* Color de los enlaces */
+    text-decoration: none; /* Sin subrayado */
+    font-size: 1.5rem; /* Tamaño de fuente */
+}
+
+.alianzasFooter a:hover {
+    color: #e80829; /* Color de los enlaces */
+    text-decoration: none; /* Sin subrayado */
+    font-size: 1.5rem; /* Tamaño de fuente */
+}
+
+/* Cookie Banner */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100vw; /* <-- Asegura que no se pase del ancho de pantalla */
+  overflow-x: hidden; /* <-- Previene desplazamiento lateral */
+  background: #000;
+  color: #fff;
+  padding: 2rem;
+  text-align: center;
+  font-size: 1.4rem;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  box-sizing: border-box;
+}
+
+.cookie-banner p {
+  margin: 0;
+  max-width: 600px;
+}
+
+.cookie-banner a {
+  color: #e80829;
+  text-decoration: underline;
+}
+
+.cookie-banner button {
+  background: #e80829;
+  border: none;
+  padding: 0.8rem 2rem;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.cookie-banner button:hover {
+  background: #c00621;
+}
+
+.politicaCookies {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  padding: 4rem 6%;
+  background-color: #fafafa;
+  color: #333;
+}
+
+.politicaCookies h1 {
+  font-size: 3rem;
+  color: #e80829;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+}
+
+.politicaCookies h2 {
+  font-size: 2rem;
+  color: #e80829;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.politicaCookies h3 {
+  font-size: 1.8rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  color: #000;
+}
+
+.politicaCookies ul {
+  padding-left: 2rem;
+  margin-top: 1rem;
+}
+
+.politicaCookies a {
+  color: #e80829;
+  text-decoration: underline;
+}
+
+.politicaCookies p, li {
+  margin-bottom: 1.5rem;
+  font-size: 1.6rem;
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 768px) {
+
+    .sectionHeader {
+        flex-wrap: wrap;
+        padding: 1rem;
+    }
+
+    .imagenLogo img{
+        /*margin: 5rem;*/
+        width: 10em;
+    }
+
+    .hamburger-container{
+        
+        background-color: #000000;
+        display: block;
+        position: absolute;
+        right: 2rem;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer; /* Añadido para mejor UX */
+        /*align-items: center;*/
+        /*justify-content: center;*/
+        z-index: 1001; /* Asegura que esté por encima del menú */
+    }
+
+    /*este menú es solo la cajita de la hamburguesa*/
+    .menu-toggle {
+        display: flex;  /* Mostrar botón hamburguesa en mobile */
+        flex-direction: column;
+        justify-content: space-between;
+        width: 3rem; /* Ancho del botón hamburguesa */
+        height: 2.4rem; /* Alto del botón hamburguesa */
+        border: none;
+        background-color: white;
+        
+    }
+    /*este menú es solo la cajita de la hamburguesa estando activa*/
+    .menu-toggle.active{
+        background-color: #000000;
+        
+    }
+
+    .menu-toggle .line{
+        width: 100%;
+        height: 3px; /* Grosor de las líneas */
+        background-color: #000000; /* Color de las líneas */
+        transition: all 0.3s ease;
+        border-radius: 10px; /* Bordes redondeados para las líneas */
+    }
+
+    /* Estilo cuando el menú está activo (fondo negro, líneas verdes) */
+    .hamburger-container.active {
+        background-color: black;
+    }
+
+    /* Animación del botón hamburguesa cuando está activo */
+    .menu-toggle.active .line:first-child {
+        transform: translateY(10px) rotate(45deg);
+        background-color: #e80829;
+    }
+
+    .menu-toggle.active .line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active .line:last-child {
+        transform: translateY(-10px) rotate(-45deg);
+        background-color: #e80829;
+    }
+
+    .menuHeader {
+        position: fixed;
+        top: 0;
+        left: -100%;  /* Menú oculto por defecto */
+        width: 100%;
+        height: 100vh;
+        background-color: black;
+        margin: 0;
+        padding: 80px 20px 20px;
+        transition: 0.3s;
+        z-index: 100;
+    }
+    .menuHeader.active {
+        left: 0;  /* Menú visible cuando está activo */
+    }
+    .menuHeader ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        list-style: none;
+        padding: 0;
+        
+    }
+    .menuHeader li {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .menuHeader li{
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .menuHeader a{
+        color: white !important; /* Asegura que el texto sea blanco */
+        font-size: 2rem;
+        display: block;
+        padding: 1.5rem;
+        text-decoration: none;
+    }
+
+    .menuHeader a:hover {
+        color: #e80829 !important; /* El verde de tu diseño */
+        background-color: transparent;
+        border-radius: 1rem;
+    }
+
+     /* Clase específica para el enlace activo */
+    .menuHeader .menuInicio a {
+        color: #e80829 !important;
+    }
+
+    .menuContactoMobil {
+        display: block;
+    }
+
+    /* Dar estilo especial al enlace de contacto */
+    .menuContactoMobil a {
+        color: #e80829 !important; /* Color verde para destacar */
+    }
+
+    .menuContactoMobil a:hover {
+        background-color: #e80829 !important;
+        color: black !important;
+    }
+
+    /* Ajuste para el botón hamburguesa */
+    
+
+
+    .buttonHeader {
+        display: none;
+    }
+
+    /* Video */
+
+    .video-section {
+        height: 100vh; /* Asegura altura completa en móviles */
+    }
+
+    .video-container iframe {
+        width: 100%;
+        height: 100%;
+        min-width: 100%;
+        min-height: 100%;
+    }
+    /* Overlay opcional */
+    .video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        z-index: 1;
+    }
+
+    /* Contenedor para contenido superpuesto */
+    .video-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 0;
+    }
+
+    .video-title {
+        color: white;
+        font-size: 4rem;
+        letter-spacing: 3px;
+    }
+
+    .video-title span{
+        color: #e80829;
+    }
+
+    .video-subtitle {
+        color: white;
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+    }
+
+    /* Partners List */
+    
+    .partnersList ul {
+        gap: 8%; /* Espacio entre logos */
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+    
+    .partnersList li img {
+        height: 6rem; /* Altura fija */
+    }
+
+    /* Sección Quién es Red pagos pro movil */
+
+    .quienEsRedPagosPro{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 10rem;
+        background-color: black;
+    }
+
+    .quienEsRedPagosPro h2{
+        font-size: 3rem;
+        margin-bottom: 3rem;
+        color: #e80829;
+    }
+    .quienEsRedPagosPro p{
+        font-size: 1.5rem;
+        margin-left: 2%;
+        margin-right: 2%;
+        margin-bottom: 0rem;
+        color: grey;
+    }
+
+    .quienEsRedPagosPro img{
+        width: 90%;
+        margin-left: 2%;
+        margin-right: 2%;   
+        border-radius:20px;
+        margin-top: 0rem;
+        margin-bottom: 10rem;
+    }
+
+    /*2da sección movil - Soluciones de pago*/
+
+    .solucionesPago{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin-left: 8%;
+        margin-right: 8%;
+        margin-top: 2rem;
+    }
+
+    .solucionesPago h2{
+        font-size: 3rem;
+        margin-bottom: 2rem;
+        color:#e80829;
+    }
+
+    .solucionesPago p{
+        font-size: 1.5rem;
+        color: grey;
+    }
+
+    .solucionesImg {
+        display: none;
+    }
+
+     /*slider Servicios*/
+
+    .sliderMain {
+        width: 90%;
+        max-width: 600px;
+        margin: 0 auto 8rem;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Contenedor de las imágenes del slider */
+    .sliderContainer {
+        display: flex;
+        width: 300%; /* Para 4 imágenes */
+        animation: slider 12s infinite linear;
+    }
+
+    .sliderContainer ul {
+        display: flex;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        
+    }
+
+    .sliderContainer li {
+        width: 25%; /* 100% ÷ 4 imágenes */
+        flex-shrink: 0;
+        margin-left: 5rem;
+    }
+
+    .sliderContainer h3{
+        font-size: 2rem;
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .sliderContainer img {
+        width: 100%;
+        height: auto;
+        border-radius: 11px;
+        margin: 2rem 0;
+    }
+    
+    @keyframes slider{
+        0% {margin-left: 0%;}/*Esto quiere decir que la primera imagen irá de 0 a 20% en 10s
+            ya que como tenemos 5 imágenes, habría que dividir 50s/5 = 10s por cada imágen y cada 
+            imagen tarda 10 en cambiar*/
+        35% {margin-left: -100%;}
+        60% {margin-left: -200%;}
+        100% {margin-left:0%;}
+    }
+
+
+    /*Sección Experience - 3ra sección*/
+
+    .sectionExperience{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-top: 2rem;
+        gap: 3rem;
+        background-color: black;
+    }
+
+    .sectionExperience h2{
+        font-size: 3rem;
+        margin-bottom: 5rem;
+        color: #e80829;
+    }
+
+    .sectionExperience ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin-left: 10%;
+        padding: 0;
+    }
+
+    .sectionExperience ul li {
+        background-color: #fff;
+        border: 2px solid #e80829;
+        border-radius: 12px;
+        padding: 2rem;
+        font-size: 1.8rem;
+        color: #444;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        width: 90%;
+        transition: transform 0.3s ease;
+  }
+
+  .sectionExperience ul li:hover {
+        transform: translateY(-4px);
+        background-color: #fff5f6;
+  }
+
+
+    .sectionExperience p{
+        font-size: 1.5rem;
+        color: grey;
+    }
+
+    .sectionExperience img{
+        width: 75%;
+        height: auto;
+        margin-left: 2%;
+        margin-right: 2%;
+        border-radius:20px;
+        margin-bottom: 5rem;
+    }
+
+
+
+    /* Sección tecnología 4ta Sección */
+    .sectionTech{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin-left: 8%;
+        margin-right: 8%;
+        margin-top: 2rem;
+    }
+
+    .sectionTech h2{
+        font-size: 3rem;
+        margin-bottom: 10rem;
+        color: #e80829;
+    }
+    .sectionTech ul{
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+    }
+
+    .containerSectionTech ul {
+        flex-direction: column;
+        gap: 4rem;
+        align-items: center;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+  .containerSectionTech li {
+        width: 90% !important; /* Usamos casi todo el ancho */
+        max-width: 500px;
+        background-color: #fff;
+        border: 2px solid #e80829;
+        border-radius: 12px;
+        padding: 2rem;
+        text-align: center;
+        box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+    }
+
+  .containerSectionTech iframe {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        margin: 1rem auto;
+        display: block;
+    }
+
+  .containerSectionTech h3 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: #e80829; 
+    }
+
+  .containerSectionTech p {
+        font-size: 1.6rem;
+        color: #444;
+    }
+
+  .sectionTech1 {
+        width: 100%;
+        padding: 2rem 0;
+        margin: 0 auto;
+        box-shadow: none;
+        background-color: transparent;  
+    }
+
+    /*5ta sección - Métodos de Pago*/
+
+    .metodosPago{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin-top: 2rem;
+        background-color: black;
+    }
+
+    .metodosPago h2{
+        font-size: 3rem;
+        margin-bottom: 2rem;
+        color: #e80829;
+        margin-left: 6%;
+        margin-right: 6%;
+        margin-top: 5rem;
+    }
+
+    .metodosPagoUl{
+        justify-content: center;
+        font-size: 1.5rem;
+        color: grey;
+    }
+
+    .metodosPagosUl-li {
+        width: 25rem
+
+    }
+
+    .metodosPagoUl h3{
+        color: #e80829;
+        list-style: none;
+    }
+
+    .metodosPagoUl-li{
+        list-style: none;
+    }
+   
+    /*Seccion 5 de "Soluciones de depósito" */
+    .solucionesDeDeposito img{
+        width: 75%;
+        margin-left: 5rem;
+        height: auto;
+        
+    }
+
+    .solucionesDepositoGrid li {
+    width: 75%;
+    }
+    .solucionesDeDeposito h2 {
+        font-size: 4rem;
+        text-align: center;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        color: black;
+    }
+
+    /*Sección 6 de "Panel de Control Inteligente" */
+    .panelControl h2{
+        font-size: 5rem;
+    }
+
+    .panelControlLista li {
+        width: 85%;
+    }
+    
+
+    
+
+
+
+    /*-- Footer movil --*/
+    
+    .firstSectionFooter{
+        flex-direction: column; /* Apila los elementos verticalmente */
+        width: 90%; /* Ajusta el ancho para los márgenes */
+        padding: 3rem 0; /* Añade padding vertical */
+        text-align: center; /* Centra el texto */
+    }
+
+    .firstSectionFooter > div {
+        margin-bottom: 2rem; /* Espacio entre secciones */
+        padding: 0 2rem; /* Padding horizontal */
+    }
+
+    .firstSectionFooter h4{
+        color: #e80829;
+        margin-top: 1rem; /* Reduce el margen superior */
+        margin-bottom: 1.5rem;
+        font-size: 1.8rem;
+    }
+
+    .firstSectionFooter p
+    .firstSectionFooter ul {
+        font-size: 1.4rem;
+        line-height: 1.6; /* Mejora el espaciado entre líneas */    
+    }
+    .firstSectionFooter ul{
+        list-style: none;
+        color: #ffffff;
+        font-size: 1.5rem;
+        
+    }
+
+    .iconosFooter {
+        margin-top: 2rem;
+    }
+
+    .iconosFooter li{
+        margin: 1rem; /* Reduce el margen entre iconos */
+    }
+    /*Segunda sección footer*/
+    .secondSectionFooter{
+        margin-top: 1rem;
+        padding: 2rem 1rem;
+        font-size: 1.3rem;
+    }
+
+    .menuFooter a{
+        color: inherit;         /* Hereda el color del elemento padre */
+        text-decoration: none;  /* Elimina la línea debajo del texto */
+    }
+
+    .politicaCookies {
+        padding: 2rem;
+    }
+}
+
+/* Para pantallas más anchas que altas (landscape) */
+@media (min-aspect-ratio: 16/9) {
+    .video-container iframe {
+        /* Ajusta el video para cubrir el ancho */
+        height: 56.25vw; /* 100 * 9/16 */
+    }
+
+    .politicaCookies {
+        padding: 2rem;
+    }
+}
+
+/* Para pantallas más altas que anchas (portrait) */
+@media (max-aspect-ratio: 16/9) {
+    .video-container iframe {
+        /* Ajusta el video para cubrir el alto */
+        width: 177.78vh; /* 100 * 16/9 */
+    }
+
+    .politicaCookies {
+        padding: 2rem;
+    }
+}
